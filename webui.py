@@ -310,6 +310,9 @@ def initialize_rest(*, reload_script_modules=False):
 
     Thread(target=load_model).start()
 
+    devices.dtype = torch.float32 if shared.cmd_opts.no_half else torch.float16
+    devices.dtype_vae = torch.float32 if shared.cmd_opts.no_half or shared.cmd_opts.no_half_vae else torch.float16
+
     Thread(target=devices.first_time_calculation).start()
 
     shared.reload_hypernetworks()
