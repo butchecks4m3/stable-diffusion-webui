@@ -3,6 +3,6 @@
 set PYTHON=
 set GIT=
 set VENV_DIR=
-set COMMANDLINE_ARGS= os.environ.get('commandline_args', "--api ")
+set COMMANDLINE_ARGS= xformers --api
 
 call webui.bat
